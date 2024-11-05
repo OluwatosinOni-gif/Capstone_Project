@@ -225,8 +225,8 @@ This is where we include some basic lines of code, queries and DAX expressions u
 For data cleaning and analysis, I used Excel formulas and pivot tables. Here are a few examples:
 
 - Data Cleaning: Using =TRIM(), =CLEAN(), and REMOVEDUPLICATES to remove inconsistencies and handle errors in the data.
-- Analysis: Creating pivot tables to summarize and
-- 
+- Analysis: Creating pivot tables to summarize subscription pattern
+  
 #### Calculating in Excel for Customer Data
 - Generating average subscription duration (=F2-E2)
   
@@ -234,12 +234,9 @@ For data cleaning and analysis, I used Excel formulas and pivot tables. Here are
 
 
 - Using pivot Table to generate Subscription pattern in Customer Data
+![Customer Data (Pivot Table)](https://github.com/user-attachments/assets/f3554405-dd65-4228-a88c-79d36921bbbc)
 
-
-
-
-- Using a Chart to Visualize the Customer Data
-  
+ 
 #### SQL Queries for Customer Data
 A variety of SQL queries were created to analyze and structure data, all documented below.
 
@@ -297,7 +294,33 @@ Order By SubscriptionEnd_Count Desc
     COUNT(CASE WHEN SubscriptionEnd IS NOT NULL THEN 1 END) AS CanceledSubscriptions
 FROM [dbo].[Lita CustomerData]
 ```
+SQL Visuals
+![SQL Customer Data Query 1](https://github.com/user-attachments/assets/40d8f536-3f52-4bc7-b400-911c4f2a016e)
+![SQL Customer Data Query 2](https://github.com/user-attachments/assets/41e44d14-0c13-4dcf-aa2e-273edfe94b8c)
 
+#### PowerBi for Customer Data
+In Power BI, I used DAX expressions to create calculated fields and measures for visualization. Examples include:
+
+Customer Segment Calculation:
+- Average Revenue = AVERAGE('CustomerData'[Revenue])
+- CustomerID Count = DISTINCTCOUNT(CustomerData[CustomerID])
+- Subscription Count = COUNT('CustomerData'[CustomerID])
+
+These tools and expressions helped in building a dynamic dashboard to visualize trends and insights.
+
+#### Data Visualization
+![Customer Data Visualization 1](https://github.com/user-attachments/assets/00751391-ed28-47ab-9f92-b87fb0fbc715)
+![Customer Data Visualization 2](https://github.com/user-attachments/assets/9aeb9509-1a90-4cbc-84f0-9c09bf15e65f)
+
+
+### Conclusion
+---
+The data highlights a few key insights:
+- Active vs. Canceled Subscriptions: There are more active (15,175) than canceled (18,612) subscriptions, suggesting retention opportunities.
+- Revenue by Region: Revenue varies by region, with potential high-performing areas. This could help tailor marketing or retention efforts to maximize profitability in top regions.
+- Subscription Counts by Type: The highest subscription type is Standard, followed by Premium, and Basic. This distribution helps identify which plans drive user preference.
+- Subscription Duration Patterns: A declining trend in subscription duration implies that customers tend to unsubscribe over time, highlighting potential for targeted retention efforts.
+- Average Revenue by Subscription Type: Premium and Standard subscriptions contribute significantly to revenue, indicating where value lies.
 
 
 
