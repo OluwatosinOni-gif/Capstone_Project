@@ -86,12 +86,12 @@ A variety of SQL queries were created to analyze and structure data, all documen
 In Power BI, I used DAX expressions to create calculated fields and measures for visualization. Examples include:
 
 Total Sales Calculation:
-Total Sales = SUM(Sales[Amount])
+- Total Sales = SUM(Sales[Amount])
+- Total Purchase Amount = (SalesData[Quantity]*SalesData[UnitPrice]) 
 
 Customer Segmentation:
-CustomerID Count = DISTINCTCOUNT(CustomerData[CustomerID])
-
-Average Revenue = AVERAGE('CustomerData'[Revenue])
+- CustomerID Count = DISTINCTCOUNT(CustomerData[CustomerID])
+- Average Revenue = AVERAGE('CustomerData'[Revenue])
 
 These tools and expressions helped in building a dynamic dashboard to visualize trends and insights.
 
