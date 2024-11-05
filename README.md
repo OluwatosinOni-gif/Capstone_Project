@@ -95,6 +95,8 @@ Customer Segmentation:
 
 These tools and expressions helped in building a dynamic dashboard to visualize trends and insights.
 
+### Data Visualization
+
 
 
 
