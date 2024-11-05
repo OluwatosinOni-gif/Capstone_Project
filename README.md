@@ -77,38 +77,63 @@ For data cleaning and analysis, I used Excel formulas and pivot tables. Here are
 #### SQL Queries
 A variety of SQL queries were created to analyze and structure data, all documented below.
 
-1. ```Create Database Capstone_Project```
-2. ```Select * From [dbo].[CAPSalesData]```
+ ```Create
+Database Capstone_Project
+```
+   
+ ```Select *
+From [dbo].[CAPSalesData]
+```
+
+ ```SELECT Product, SUM(Total_Sales) AS TotalSales
+FROM [dbo].[CAPSalesData] GROUP BY Product
+```
+
+ ```Select Region,
+ Count(OrderID) As Number_Of_Sales_Transaction
+From [dbo].[CAPSalesData] Group by Region
+```
+
+ ```Select MAX(Product) As Product, 
+ MAX(Total_Sales) As Highest_Selling_Product
+From [dbo].[CAPSalesData]
+```
+
+ ```SELECT Product, SUM(Revenue) AS TotalRevenue 
+ FROM [dbo].[CAPSalesData] GROUP BY Product
+```
+
+```SELECT * FROM [dbo].[CAPSalesData] 
+WHERE Year(OrderDate) = 2024
+```
+
+```SELECT MONTH(OrderDate) AS month FROM [dbo].[CAPSalesData] 
+WHERE Year(OrderDate) = 2024
+```
+
+```Select MONTH(OrderDate) AS Month, SUM(Total_Sales) AS MonthlySalesTotal 
+FROM [dbo].[CAPSalesData] WHERE YEAR(OrderDate) = 2024 GROUP BY MONTH(OrderDate)
+ORDER BY Month
+```
 
 
-3. ```SELECT Product, SUM(Total_Sales) AS TotalSales FROM [dbo].[CAPSalesData] GROUP BY Product```
+```Select TOP 5 Customer_Id, SUM(Quantity*UnitPrice) AS TotalPurchaseAmount 
+From [dbo].[CAPSalesData] Group By Customer_Id
+Order By TotalPurchaseAmount Desc
+```
+
+ ```WITH Total_Sales AS ( SELECT SUM(Quantity * UnitPrice) AS TotalSalesAmount 
+ FROM [dbo].[CAPSalesData]) SELECT Region, SUM(Quantity * UnitPrice) AS RegionSales,
+(SUM(Quantity * UnitPrice) * 1.0 / (SELECT TotalSalesAmount FROM TotalSales) * 100) AS SalesPercentage
+FROM [dbo].[CAPSalesData] GROUP BY Region
+```
+
+```Select Distinct Product from [dbo].[CAPSalesData] 
+Where Product NOT IN( Select Product from [dbo].[CAPSalesData]
+where OrderDate >= DateAdd(quarter,-1, GetDate()) and OrderDate < GetDate())
+```
 
 
-
-4. ```Select Region, Count(OrderID) As Number_Of_Sales_Transaction From [dbo].[CAPSalesData] Group by Region```
-
-
-
-5. ```Select MAX(Product) As Product, MAX(Total_Sales) As Highest_Selling_Product From [dbo].[CAPSalesData]```
-
-
-
-6. ```SELECT Product, SUM(Revenue) AS TotalRevenue FROM [dbo].[CAPSalesData] GROUP BY Product```
-
-7. ```SELECT * FROM [dbo].[CAPSalesData] WHERE Year(OrderDate) = 2024```
-
-8. ```SELECT MONTH(OrderDate) AS month FROM [dbo].[CAPSalesData] WHERE Year(OrderDate) = 2024```
-
-9. ```Select MONTH(OrderDate) AS Month, SUM(Total_Sales) AS MonthlySalesTotal FROM [dbo].[CAPSalesData] WHERE YEAR(OrderDate) = 2024 GROUP BY MONTH(OrderDate) ORDER BY Month```
-
-
-10. ```Select TOP 5 Customer_Id, SUM(Quantity*UnitPrice) AS TotalPurchaseAmount From [dbo].[CAPSalesData] Group By Customer_Id  Order By TotalPurchaseAmount Desc```
-
-
-11. ```WITH Total_Sales AS ( SELECT SUM(Quantity * UnitPrice) AS TotalSalesAmount FROM [dbo].[CAPSalesData]) SELECT Region, SUM(Quantity * UnitPrice) AS RegionSales, (SUM(Quantity * UnitPrice) * 1.0 / (SELECT TotalSalesAmount FROM TotalSales) * 100) AS SalesPercentage FROM [dbo].[CAPSalesData] GROUP BY Region```
-
-
-12. ```Select Distinct Product from [dbo].[CAPSalesData] Where Product NOT IN( Select Product from [dbo].[CAPSalesData] where OrderDate >= DateAdd(quarter,-1, GetDate()) and OrderDate < GetDate())```
 
 #### Dax Functions
 In Power BI, I used DAX expressions to create calculated fields and measures for visualization. Examples include:
