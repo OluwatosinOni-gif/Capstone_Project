@@ -243,6 +243,63 @@ For data cleaning and analysis, I used Excel formulas and pivot tables. Here are
 #### SQL Queries for Customer Data
 A variety of SQL queries were created to analyze and structure data, all documented below.
 
+```Select *
+From [dbo].[Lita CustomerData]
+```
+
+----Retrieve the total number of customers from each region----
+```Select Region, Count(Distinct CustomerID) as Total_Customers 
+from [dbo].[Lita CustomerData]
+Group By Region
+```
+
+----find the most popular subscription type by the number of customers---
+```Select top 1 SubscriptionType, count (Distinct CustomerID) As Total_Customers
+From [dbo].[Lita CustomerData]
+Group by SubscriptionType
+Order by total_customers desc
+```
+
+----find customers who canceled their subscription within 6 months----
+```Select CustomerID
+From [dbo].[Lita CustomerData]
+Where Datediff(Month, SubscriptionStart, SubscriptionEnd) <=6
+```
+
+---calculate the average subscription duration for all customers---
+```Select AVG(Datediff(Day, SubscriptionStart, SubscriptionEnd)) As Avg_Subscription_Duration
+From [dbo].[Lita CustomerData]
+```
+
+----find customers with subscriptions longer than 12 months---
+```Select CustomerID
+From [dbo].[Lita CustomerData]
+Where Datediff(Month, SubscriptionStart, SubscriptionEnd) >12
+```
+
+---calculate total revenue by subscription type---
+```Select SubscriptionType, Sum(Revenue) as Total_Revenue 
+From [dbo].[Lita CustomerData]
+Group by SubscriptionType
+```
+
+---find the top 3 regions by subscription cancellations---
+```Select Top 3 Region, Count(*) as SubscriptionEnd_count 
+From [dbo].[Lita CustomerData] 
+Where SubscriptionEnd is  Null 
+Group by Region 
+Order By SubscriptionEnd_Count Desc
+```
+
+---find the total number of active and canceled subscriptions---
+```SELECT 
+    COUNT(CASE WHEN SubscriptionEnd IS NULL THEN 1 END) AS ActiveSubscriptions,
+    COUNT(CASE WHEN SubscriptionEnd IS NOT NULL THEN 1 END) AS CanceledSubscriptions
+FROM [dbo].[Lita CustomerData]
+```
+
+
+
 
 
 
