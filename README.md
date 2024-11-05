@@ -238,9 +238,10 @@ For data cleaning and analysis, I used Excel formulas and pivot tables. Here are
 
 
 
-
 - Using a Chart to Visualize the Customer Data
   
+#### SQL Queries for Customer Data
+A variety of SQL queries were created to analyze and structure data, all documented below.
 
 
 
