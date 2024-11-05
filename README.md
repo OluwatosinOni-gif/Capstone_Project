@@ -60,7 +60,6 @@ For data cleaning and analysis, I used Excel formulas and pivot tables. Here are
 A variety of SQL queries were created to analyze and structure data, all documented below.
 
 1. ```Create Database Capstone_Project```
-
 2. ```Select * From [dbo].[CAPSalesData]```
 
 
@@ -104,14 +103,14 @@ Sales Calculation:
     YEAR('SalesData'[OrderDate]) = YEAR(2024),
     VALUES('SalesData'[OrderDate]))
 
-Customer Segmentation:
-- CustomerID Count = DISTINCTCOUNT(CustomerData[CustomerID])
-- Average Revenue = AVERAGE('CustomerData'[Revenue])
-
 These tools and expressions helped in building a dynamic dashboard to visualize trends and insights.
 
 ### Data Visualization
 
+
+![Sales Data Visualization 1](https://github.com/user-attachments/assets/9b9eb44c-f198-474d-9353-62b9258a867f)
+
+![Sales Data Visualization 2](https://github.com/user-attachments/assets/1d201087-e0d4-48e1-b747-5c1665b165f6)
 
 
 
