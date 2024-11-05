@@ -2,6 +2,23 @@
 This project analyzes Sales and Customer Data to uncover insights for better business decisions. Key tasks include data cleaning, exploration, and visualization of sales trends and customer segments. Using Excel, SQL, and Power BI, it provides a clear view of essential metrics to boost business intelligence.
 
 ### Project Title: Capstone Project 
+
+### Outline
+
+[Project Overview](#project-overview)
+
+[Data Sources](#data-sources)
+
+[Tools Used](#tools-used)
+
+[Data Cleaning and Preparation](#data-cleaning-and-preparation)
+
+[Exploratory Data Analysis](#exploratory-data-analysis)
+
+[Data Analysis](#data-analysis)
+
+[Data Visualization](#data-visualization)
+
 ### Project Overview
 ---
  This Capstone project analyzes Sales and Customer Data to uncover insights for better business decisions. Key tasks include data cleaning, exploration, and visualization of sales trends and customer segments. Using Excel, SQL, and Power BI, it provides a clear view of essential metrics to boost business intelligence.
@@ -36,6 +53,7 @@ EDA involved exploring the Data to answer some questions about the provided Data
 - Create a dashboard that visualizes the insights found in Excel and SQL
 
 ### Data Analysis
+---
 This is where we include some basic lines of code, queries and DAX expressions used during my analysis
 
 #### Excel 
@@ -106,11 +124,13 @@ Sales Calculation:
 These tools and expressions helped in building a dynamic dashboard to visualize trends and insights.
 
 ### Data Visualization
-
+---
 
 ![Sales Data Visualization 1](https://github.com/user-attachments/assets/9b9eb44c-f198-474d-9353-62b9258a867f)
 
 ![Sales Data Visualization 2](https://github.com/user-attachments/assets/1d201087-e0d4-48e1-b747-5c1665b165f6)
+
+
 
 
 
