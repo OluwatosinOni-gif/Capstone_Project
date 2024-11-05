@@ -44,6 +44,9 @@ For data cleaning and analysis, I used Excel formulas and pivot tables. Here are
 - Data Cleaning: Using =TRIM(), =CLEAN(), and REMOVEDUPLICATES to remove inconsistencies and handle errors in the data.
 - Analysis: Creating pivot tables to summarize and segment data, and using =SUM, =AVERAGEIF(), and =COUNTIF() functions for conditional calculations.
 
+#### Calculating in Excel
+- Generating Total Sales
+
 
 #### SQL Queries
 A variety of SQL queries were created to analyze and structure data, all documented below.
