@@ -37,68 +37,46 @@ EDA involved exploring the Data to answer some questions about the provided Data
 
 ### Data Analysis
 This is where we include some basic lines of code, queries and DAX expressions used during my analysis
-Excel
+#### Excel
+
+
+#### SQL Queries
 
 ```Create Database Capstone_Project```
 
 ```Select * From [dbo].[CAPSalesData]```
 
 
-```SELECT Product, SUM(Total_Sales) AS TotalSales
-FROM [dbo].[CAPSalesData]
-GROUP BY Product```
+```SELECT Product, SUM(Total_Sales) AS TotalSales FROM [dbo].[CAPSalesData] GROUP BY Product```
 
 
 
-```Select Region, Count(OrderID) As Number_Of_Sales_Transaction
-From [dbo].[CAPSalesData]
-Group by Region```
+```Select Region, Count(OrderID) As Number_Of_Sales_Transaction From [dbo].[CAPSalesData] Group by Region```
 
 
 
-```Select MAX(Product) As Product, MAX(Total_Sales) As Highest_Selling_Product 
-From [dbo].[CAPSalesData]```
+```Select MAX(Product) As Product, MAX(Total_Sales) As Highest_Selling_Product From [dbo].[CAPSalesData]```
 
 
 
-```SELECT Product, SUM(Revenue) AS TotalRevenue
-FROM [dbo].[CAPSalesData]
-GROUP BY Product```
-
-
+```SELECT Product, SUM(Revenue) AS TotalRevenue FROM [dbo].[CAPSalesData] GROUP BY Product```
 
 ```SELECT * FROM [dbo].[CAPSalesData] WHERE Year(OrderDate) = 2024```
 
-```SELECT MONTH(OrderDate) AS month FROM [dbo].[CAPSalesData]
- WHERE Year(OrderDate) = 2024```
+```SELECT MONTH(OrderDate) AS month FROM [dbo].[CAPSalesData] WHERE Year(OrderDate) = 2024```
 
-```Select MONTH(OrderDate) AS Month, SUM(Total_Sales) AS MonthlySalesTotal
-FROM [dbo].[CAPSalesData]
-WHERE YEAR(OrderDate) = 2024
-GROUP BY MONTH(OrderDate)
-ORDER BY Month```
+```Select MONTH(OrderDate) AS Month, SUM(Total_Sales) AS MonthlySalesTotal FROM [dbo].[CAPSalesData] WHERE YEAR(OrderDate) = 2024 GROUP BY MONTH(OrderDate) ORDER BY Month```
 
 
-```Select TOP 5 Customer_Id, SUM(Quantity*UnitPrice) AS TotalPurchaseAmount
-From [dbo].[CAPSalesData]
-Group By Customer_Id 
-Order By TotalPurchaseAmount Desc```
+```Select TOP 5 Customer_Id, SUM(Quantity*UnitPrice) AS TotalPurchaseAmount From [dbo].[CAPSalesData] Group By Customer_Id  Order By TotalPurchaseAmount Desc```
 
 
-```WITH Total_Sales AS (
-    SELECT SUM(Quantity * UnitPrice) AS TotalSalesAmount
-    FROM [dbo].[CAPSalesData]
-)
-SELECT Region,
-    SUM(Quantity * UnitPrice) AS RegionSales,
-    (SUM(Quantity * UnitPrice) * 1.0 / (SELECT TotalSalesAmount FROM TotalSales) * 100) AS SalesPercentage
-FROM [dbo].[CAPSalesData]
-GROUP BY Region```
+```WITH Total_Sales AS ( SELECT SUM(Quantity * UnitPrice) AS TotalSalesAmount FROM [dbo].[CAPSalesData]) SELECT Region, SUM(Quantity * UnitPrice) AS RegionSales, (SUM(Quantity * UnitPrice) * 1.0 / (SELECT TotalSalesAmount FROM TotalSales) * 100) AS SalesPercentage FROM [dbo].[CAPSalesData] GROUP BY Region```
 
 
-Select Distinct Product 
-from [dbo].[CAPSalesData]
-Where Product NOT IN(
-Select Product from [dbo].[CAPSalesData]
-where OrderDate >= DateAdd(quarter,-1, GetDate()) and OrderDate < GetDate())
+```Select Distinct Product from [dbo].[CAPSalesData] Where Product NOT IN( Select Product from [dbo].[CAPSalesData] where OrderDate >= DateAdd(quarter,-1, GetDate()) and OrderDate < GetDate())```
+
+#### Dax Functions
+
+
 
