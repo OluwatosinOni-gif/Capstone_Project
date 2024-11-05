@@ -41,12 +41,12 @@ This is where we include some basic lines of code, queries and DAX expressions u
 #### Excel
 For data cleaning and analysis, I used Excel formulas and pivot tables. Here are a few examples:
 
-Data Cleaning: Using =TRIM(), =CLEAN(), and =REMOVEDUPLICATE() to remove inconsistencies and handle errors in the data.
-Analysis: Creating pivot tables to summarize and segment data, and using =SUMIFS(), =AVERAGEIF(), and =COUNTIF() functions for conditional calculations.
+- Data Cleaning: Using =TRIM(), =CLEAN(), and REMOVEDUPLICATES to remove inconsistencies and handle errors in the data.
+- Analysis: Creating pivot tables to summarize and segment data, and using =SUM, =AVERAGEIF(), and =COUNTIF() functions for conditional calculations.
 
 
 #### SQL Queries
-A variety of SQL queries were created to analyze and structure data, all documented in my below.
+A variety of SQL queries were created to analyze and structure data, all documented below.
 
 ```Create Database Capstone_Project```
 
@@ -83,26 +83,20 @@ A variety of SQL queries were created to analyze and structure data, all documen
 ```Select Distinct Product from [dbo].[CAPSalesData] Where Product NOT IN( Select Product from [dbo].[CAPSalesData] where OrderDate >= DateAdd(quarter,-1, GetDate()) and OrderDate < GetDate())```
 
 #### Dax Functions
-
-
-Excel
-For data cleaning and analysis, I used Excel formulas and pivot tables. Here are a few examples:
-
-Data Cleaning: Using =TRIM(), =CLEAN(), and =IFERROR() to remove inconsistencies and handle errors in the data.
-Analysis: Creating pivot tables to summarize and segment data, and using =SUMIFS(), =AVERAGEIF(), and =COUNTIF() functions for conditional calculations.
-Power BI
 In Power BI, I used DAX expressions to create calculated fields and measures for visualization. Examples include:
 
 Total Sales Calculation:
-DAX
-Copy code
 Total Sales = SUM(Sales[Amount])
+
 Customer Segmentation:
-DAX
-Copy code
-Customer Segment = 
-  IF(CALCULATE(COUNTROWS(Sales), Sales[Amount] > 1000), "High Value", "Regular")
+CustomerID Count = DISTINCTCOUNT(CustomerData[CustomerID])
+
+Average Revenue = AVERAGE('CustomerData'[Revenue])
+
 These tools and expressions helped in building a dynamic dashboard to visualize trends and insights.
+
+
+
 
 
 
