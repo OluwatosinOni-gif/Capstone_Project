@@ -45,7 +45,11 @@ For data cleaning and analysis, I used Excel formulas and pivot tables. Here are
 - Analysis: Creating pivot tables to summarize and segment data, and using =SUM, =AVERAGEIF(), and =COUNTIF() functions for conditional calculations.
 
 #### Calculating in Excel
-- Generating Total Sales
+- Generating Total Sales and Average Sales per Product (=F2*G2) and AVERAGEIF(C:C,C:C,H:H)
+
+
+
+- Calc
 
 
 #### SQL Queries
