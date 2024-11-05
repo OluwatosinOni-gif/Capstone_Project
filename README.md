@@ -229,9 +229,18 @@ For data cleaning and analysis, I used Excel formulas and pivot tables. Here are
 - 
 #### Calculating in Excel for Customer Data
 - Generating average subscription duration (=F2-E2)
-- 
+  
+  ![Customer Data (Subcription Duration)](https://github.com/user-attachments/assets/e6d7e06a-334b-4b55-92e6-a8d5bed10083)
 
 
+- Using pivot Table to generate Subscription pattern in Customer Data
+
+
+
+
+
+- Using a Chart to Visualize the Customer Data
+  
 
 
 
