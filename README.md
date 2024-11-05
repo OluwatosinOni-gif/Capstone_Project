@@ -43,30 +43,30 @@ Excel
 
 ```Select * From [dbo].[CAPSalesData]```
 
-----Retrieve the total sales for each product category----
+
 ```SELECT Product, SUM(Total_Sales) AS TotalSales
 FROM [dbo].[CAPSalesData]
 GROUP BY Product```
 
 
----Number of sales transactions in each region---
+
 ```Select Region, Count(OrderID) As Number_Of_Sales_Transaction
 From [dbo].[CAPSalesData]
 Group by Region```
 
 
-----Highest-selling product by total sales value---
+
 ```Select MAX(Product) As Product, MAX(Total_Sales) As Highest_Selling_Product 
 From [dbo].[CAPSalesData]```
 
 
-----Total revenue per product-----
+
 ```SELECT Product, SUM(Revenue) AS TotalRevenue
 FROM [dbo].[CAPSalesData]
 GROUP BY Product```
 
 
-----Calculate monthly sales totals for the current year-----
+
 ```SELECT * FROM [dbo].[CAPSalesData] WHERE Year(OrderDate) = 2024```
 
 ```SELECT MONTH(OrderDate) AS month FROM [dbo].[CAPSalesData]
@@ -79,13 +79,12 @@ GROUP BY MONTH(OrderDate)
 ORDER BY Month```
 
 
----top 5 customers by total purchase amount---
 ```Select TOP 5 Customer_Id, SUM(Quantity*UnitPrice) AS TotalPurchaseAmount
 From [dbo].[CAPSalesData]
 Group By Customer_Id 
 Order By TotalPurchaseAmount Desc```
 
-----calculate the percentage of total sales contributed by each region---
+
 ```WITH Total_Sales AS (
     SELECT SUM(Quantity * UnitPrice) AS TotalSalesAmount
     FROM [dbo].[CAPSalesData]
@@ -96,10 +95,10 @@ SELECT Region,
 FROM [dbo].[CAPSalesData]
 GROUP BY Region```
 
----Identify products with no sales in the last quarter----
-```Select Distinct Product 
+
+Select Distinct Product 
 from [dbo].[CAPSalesData]
 Where Product NOT IN(
 Select Product from [dbo].[CAPSalesData]
-where OrderDate >= DateAdd(quarter,-1, GetDate()) and OrderDate < GetDate())```
+where OrderDate >= DateAdd(quarter,-1, GetDate()) and OrderDate < GetDate())
 
