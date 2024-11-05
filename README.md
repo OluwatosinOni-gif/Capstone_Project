@@ -3,12 +3,15 @@ This project analyzes Sales and Customer Data to uncover insights for better bus
 
 ### Project Title: Capstone Project 
 ### Project Overview
+---
  This Capstone project analyzes Sales and Customer Data to uncover insights for better business decisions. Key tasks include data cleaning, exploration, and visualization of sales trends and customer segments. Using Excel, SQL, and Power BI, it provides a clear view of essential metrics to boost business intelligence.
 
  ### Data Sources
+ ---
 The primary source of Data used here is Sales Data and Customer Data, this was easily downloaded from the file that LITA provided via my Learning Management System (LMS) platform.
 
  ### Tools Used
+ ---
  - Microsoft Excel [Download Here](https://canvas.instructure.com/files/273182802/download?download_frd=1)
    1. Data cleaning, analysis, and basic visualization
  - SQL- Structured Query Language: Data querying and manipulation
@@ -17,6 +20,7 @@ The primary source of Data used here is Sales Data and Customer Data, this was e
  - Canvas: Project assignments and submissions
 
 ### Data Cleaning and Preparation
+---
 In the initial phase of data preparation, I:
 - Loaded the data for inspection.
 - Removed blanks and handled missing values.
@@ -24,6 +28,7 @@ In the initial phase of data preparation, I:
 - Converted files to CSV format for SQL upload
 
 ### Exploratory Data Analysis 
+---
 EDA involved exploring the Data to answer some questions about the provided Data such as the following  [Download Here](https://canvas.instructure.com/files/273182738/download?download_frd=1)
 - Use pivot tables to summarize total sales by product, region, and month.
 - Use Excel formulas to calculate metrics such as average sales per product and total revenue by region
