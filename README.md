@@ -38,7 +38,7 @@ EDA involved exploring the Data to answer some questions about the provided Data
 ### Data Analysis
 This is where we include some basic lines of code, queries and DAX expressions used during my analysis
 
-#### Excel
+#### Excel 
 For data cleaning and analysis, I used Excel formulas and pivot tables. Here are a few examples:
 
 - Data Cleaning: Using =TRIM(), =CLEAN(), and REMOVEDUPLICATES to remove inconsistencies and handle errors in the data.
@@ -47,10 +47,15 @@ For data cleaning and analysis, I used Excel formulas and pivot tables. Here are
 #### Calculating in Excel
 - Generating Total Sales and Average Sales per Product (=F2*G2) and AVERAGEIF(C:C,C:C,H:H)
 
+![Sales Data Table (Total Sales)](https://github.com/user-attachments/assets/7f7636ad-0c6f-4b26-a871-c5cbdfbc3bbf)
 
 
-- Calc
+- Using pivot Table to generate
+![Sales Data (Pivot Table)](https://github.com/user-attachments/assets/52016e7b-9b1d-4376-ae69-760cfc8bfe4d)
 
+- Using a Chart to Visualize the Sales Data
+
+![Sales Data (Chart)](https://github.com/user-attachments/assets/6b3b6166-e56a-415a-b9b1-3430fa34d04c)
 
 #### SQL Queries
 A variety of SQL queries were created to analyze and structure data, all documented below.
@@ -92,7 +97,7 @@ A variety of SQL queries were created to analyze and structure data, all documen
 #### Dax Functions
 In Power BI, I used DAX expressions to create calculated fields and measures for visualization. Examples include:
 
-Total Sales Calculation:
+Sales Calculation:
 - Total Sales = SUM(Sales[Amount])
 - Total Purchase Amount = (SalesData[Quantity]*SalesData[UnitPrice]) 
 
