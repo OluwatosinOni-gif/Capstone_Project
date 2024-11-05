@@ -9,8 +9,9 @@ This project analyzes Sales and Customer Data to uncover insights for better bus
  The primary source of Data used here is Sales Data and Customer Data, this was easily downloaded from the file that LITA provided via my Learning Management System (LMS) platform.
 
  ### Tools Used
- - Microsoft Excel [Download Here](https://www.microsoft.com): Data cleaning, analysis, and basic visualization
+ - Microsoft Excel [Download Here](https://www.microsoft.com):
+   1. Data cleaning, analysis, and basic visualization
  - SQL- Structured Query Language: Data querying and manipulation
- - PowerBi for building a dashboard for visualisation
- - GitHub for Portfolio Building
- - Canvas for Project Assignment
+ - Power BI: Dashboard creation and advanced visualization
+ - GitHub: Portfolio and project management
+ - Canvas: Project assignments and submissions
